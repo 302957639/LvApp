@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    fromXScale开始缩放时X轴的伸缩尺寸
+    fromYScale开始缩放时y轴的伸缩尺寸
+    pivotX 属性为动画相对于物件的X坐标的开始位置
+    pivotY 属性为动画相对于物件的Y坐标的开始位置
+    toXScale缩放结束时X轴上的的尺寸
+    toYScale缩放结束时Y轴上的的尺寸
+    -->
+    <scale
+        android:duration="1500"
+        android:fromXScale="0.3"
+        android:fromYScale="0.3"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.0"
+        android:toYScale="1.0" />
+</set>

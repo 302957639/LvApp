@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tostart"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:background="@mipmap/main_page_top_day_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.romainpiel.shimmer.ShimmerTextView
+                        android:id="@+id/text_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始设置一段旅程"
+                        android:textSize="30sp"
+                        app:reflectionColor="#ebebeb" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/main_page_top_set_point" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/main_page_top_set_bg" />
+
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/grid_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="6"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:rowCount="5">
+
+                <CheckBox
+                    android:id="@+id/weather"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/weather_selector"
+                    android:gravity="center"
+                    android:text="行程天气"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:id="@+id/translation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/translate_selector"
+                    android:gravity="center"
+                    android:text="实时翻译"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/jingdian_selector"
+                    android:gravity="center"
+                    android:text="国内景点"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="6"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jizhangben"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/jizhangben_selector"
+                    android:gravity="center"
+                    android:text="记账本"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:id="@+id/rate"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/rate_selector"
+                    android:gravity="center"
+                    android:text="汇率换算"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:id="@+id/baoxian"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/insurance_selector"
+                    android:gravity="center"
+                    android:text="旅游保险"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="6"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:id="@+id/information"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/information_selector"
+                    android:gravity="center"
+                    android:text="旅游咨询"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:id="@+id/save"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/help_selector"
+                    android:gravity="center"
+                    android:text="紧急救援"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:id="@+id/chuguo"
+                    android:layout_gravity="fill"
+                    android:button="@null"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/strategy_selector"
+                    android:gravity="center"
+                    android:text="出国攻略"
+                    android:textColor="#808080" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill"
+                    android:background="#CFCFCF" />
+
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

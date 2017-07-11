@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:state_checked="false" android:state_pressed="false"
+    android:drawable="@mipmap/translate_page_normal_fs" />
+    <item android:state_checked="false" android:state_pressed="true"
+        android:drawable="@mipmap/translate_page_press_fs"/>
+<item android:state_checked="true" android:state_pressed="false"
+    android:drawable="@mipmap/translate_page_normal" />
+    <item android:state_checked="true" android:state_pressed="true"
+        android:drawable="@mipmap/translate_page_press"/>
+</selector>
