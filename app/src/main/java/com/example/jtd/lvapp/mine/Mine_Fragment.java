@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.jtd.lvapp.R;
 import com.example.jtd.lvapp.UseHelpActivity;
+import com.example.jtd.lvapp.mine.shizhi.ShezhiActivity;
 
 /**
  * Created by JTD on 2017/7/7.

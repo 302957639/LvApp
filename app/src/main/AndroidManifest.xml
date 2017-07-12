@@ -40,7 +40,7 @@
         <activity android:name=".gongjuxiang.jizhangben.JizhangbenActivity"/>
         <activity android:name=".gongjuxiang.jizhangben.MouthAvtivity"/>
         <activity android:name=".mine.YouxiangActivity"/>
-        <activity android:name=".mine.ShezhiActivity"/>
+        <activity android:name=".mine.shizhi.ShezhiActivity"/>
         <activity android:name=".mine.DengluActivity"/>
         <activity android:name=".gongjuxiang.chuguo.ChuguoActivity"/>
         <activity android:name=".gongjuxiang.information.InformationActivity"/>
@@ -51,6 +51,7 @@
         <activity android:name=".gongjuxiang.baoxian.BaoxianActivity"/>
         <activity android:name=".gongjuxiang.jizhangben.AddxiaofeiActivity"/>
         <activity android:name=".gongjuxiang.rate.Rate_CurrencyActivity"/>
+        <activity android:name=".mine.shizhi.UpdataActivity"/>
 
 
         <activity

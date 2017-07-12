@@ -43,10 +43,11 @@ public class DateActivity extends AppCompatActivity {
                 Intent intent=new Intent();
                 intent.putExtra("date",date);
                 intent.putExtra("day",day);
+                intent.putExtra("year",year);
+                intent.putExtra("mouth",mouth);
                 setResult(2001,intent);
                 finish();
             }
         });
-
     }
 }
