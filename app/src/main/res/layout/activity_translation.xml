@@ -6,6 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="#F9F9F9"
         android:orientation="horizontal">
 
         <RadioButton
@@ -45,6 +46,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:layout_weight="2"
+        android:id="@+id/choosefirst"
         android:text="简体中文"/>
     <TextView
         android:layout_width="1dp"
@@ -63,6 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:id="@+id/choosesecond"
         android:layout_weight="2"
         android:text="英语"/>
 </LinearLayout>

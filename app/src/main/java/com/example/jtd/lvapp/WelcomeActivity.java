@@ -40,6 +40,7 @@ public class WelcomeActivity extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 startActivity(new Intent(WelcomeActivity.this, FirstActivity.class));
+                finish();
             }
 
             @Override

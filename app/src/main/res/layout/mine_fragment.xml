@@ -6,6 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="#F9F9F9"
         android:orientation="horizontal">
 
         <RadioButton
@@ -224,14 +225,12 @@
                         android:layout_gravity="center"
                         android:layout_weight="0.8"
                         android:background="#02C874"
+                        android:layout_marginRight="20dp"
                         android:id="@+id/jizhangben_tongbu"
                         android:text="同步"
                         android:textColor="#fff" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -243,22 +242,19 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="3" />
 
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:layout_marginRight="20dp"
                         android:background="#02C874"
                         android:id="@+id/daochu"
                         android:text="导出Excel"
                         android:textColor="#fff" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -295,14 +291,12 @@
                         android:layout_gravity="center"
                         android:layout_weight="0.8"
                         android:background="#02C874"
+                        android:layout_marginRight="20dp"
                         android:id="@+id/zhangdan_tongbu"
                         android:text="同步"
                         android:textColor="#fff" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -340,13 +334,10 @@
                         android:layout_weight="0.8"
                         android:background="#02C874"
                         android:text="同步"
+                        android:layout_marginRight="20dp"
                         android:id="@+id/zhushou_tongbu"
                         android:textColor="#fff" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -358,22 +349,20 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="3" />
 
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center"
-                        android:layout_weight="1.5"
+                        android:layout_weight="1"
                         android:background="#02C874"
                         android:id="@+id/all_tongbu"
                         android:text="全部同步"
+                        android:layout_marginRight="20dp"
                         android:textColor="#fff" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2" />
+
                 </LinearLayout>
 
                 <TextView

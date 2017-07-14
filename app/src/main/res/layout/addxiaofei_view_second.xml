@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:id="@+id/viewsecond"
+    android:orientation="horizontal">
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:id="@+id/zhusu"
+        android:drawableTop="@drawable/jizhangben_add_zhusu"
+        android:text="住宿"
+        android:gravity="center"
+        android:textColor="@drawable/addxiaofei_text_color"
+        android:layout_weight="1"/>
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:text="门票"
+        android:id="@+id/menpiao"
+        android:gravity="center"
+        android:textColor="@drawable/addxiaofei_text_color"
+        android:drawableTop="@drawable/jizhangben_add_menpiao"
+        android:layout_weight="1"/>
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:text="医疗"
+        android:id="@+id/yiliao"
+        android:gravity="center"
+        android:textColor="@drawable/addxiaofei_text_color"
+        android:drawableTop="@drawable/jizhangben_add_yiliao"
+        android:layout_weight="1"/>
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:text="保险"
+        android:gravity="center"
+        android:id="@+id/baoxian"
+        android:textColor="@drawable/addxiaofei_text_color"
+        android:drawableTop="@drawable/jizhangben_add_baoxian"
+        android:layout_weight="1"/>
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:text="其他"
+        android:id="@+id/qita"
+        android:gravity="center"
+        android:textColor="@drawable/addxiaofei_text_color"
+        android:drawableTop="@drawable/jizhangben_add_qita"
+        android:layout_weight="1"/>
+</RadioGroup>
+</LinearLayout>

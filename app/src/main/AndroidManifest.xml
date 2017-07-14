@@ -52,6 +52,7 @@
         <activity android:name=".gongjuxiang.jizhangben.AddxiaofeiActivity"/>
         <activity android:name=".gongjuxiang.rate.Rate_CurrencyActivity"/>
         <activity android:name=".mine.shizhi.UpdataActivity"/>
+        <activity android:name=".gongjuxiang.translation.LanguageActivity"/>
 
 
         <activity
