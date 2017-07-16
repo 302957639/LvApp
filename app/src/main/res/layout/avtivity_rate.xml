@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rate_show"
-        android:background="#ccc"
+        android:background="#E8E8E8"
         android:choiceMode="singleChoice"
         android:listSelector="#fff"
         android:orientation="vertical">

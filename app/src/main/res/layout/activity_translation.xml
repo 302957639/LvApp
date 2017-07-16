@@ -55,6 +55,7 @@
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/exchange"
         android:background="@mipmap/translate_page_swap_lang_img"
         android:layout_weight="1"/>
     <TextView

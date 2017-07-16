@@ -40,10 +40,10 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
         datas.add(new Rate(R.mipmap.exrate_page_flag_cny,"CNY","0","0.00","人民币"));
         datas.add(new Rate(R.mipmap.exrate_page_flag_hkd,"HKD","0","0.00","港币"));
         datas.add(new Rate(R.mipmap.exrate_page_flag_gbp,"GBP","0","0.00","英镑"));
-
         adapter = new RateCustomAdapter(RateActivity.this, datas);
         listView=(ListView)findViewById(R.id.rate_show);
         listView.setAdapter(adapter);
+
         imgchoosecurrency=(ImageView)findViewById(R.id.choosecurrency);
         imgchoosecurrency.setOnClickListener(this);
         tvratename=(TextView)findViewById(R.id.ratename);
@@ -82,8 +82,8 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
                     int position = adapter.getPosition();
                     Rate rate=datas.get(position);
                     rate.setImgid(imgid);
-                    rate.setName(name);
-                    rate.setMoneyname(jiecheng);
+                    rate.setName(jiecheng);
+                    rate.setMoneyname(name);
                     adapter.notifyDataSetChanged();
                     break;
             }

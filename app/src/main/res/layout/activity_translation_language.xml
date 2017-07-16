@@ -38,4 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#B0B0B0" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_language">
+
+    </ListView>
 </LinearLayout>

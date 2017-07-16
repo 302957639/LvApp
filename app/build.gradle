@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
+
     defaultConfig {
         applicationId "com.example.jtd.lvapp"
         minSdkVersion 15
@@ -32,4 +33,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/Amap_2DMap_V5.2.0_20170627.jar')
     compile files('libs/AMap_Location_V3.4.1_20170629.jar')
+    //json解析所需包
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.alibaba:fastjson:1.1.56.android'
+    compile 'com.github.open-android:RetrofitUtils:0.1.9'
+    //bmob后端所需包
+    compile 'cn.bmob.android:http-legacy:1.0'
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
 }
