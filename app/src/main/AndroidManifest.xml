@@ -62,7 +62,10 @@
         <activity android:name=".gongjuxiang.rate.Rate_CurrencyActivity"/>
         <activity android:name=".mine.shizhi.UpdataActivity"/>
         <activity android:name=".gongjuxiang.translation.LanguageActivity"/>
-
+        <activity android:name=".mine.information.UserInformationActivity"/>
+        <activity android:name=".mine.information.Information_ChangemimaActivity"/>
+        <activity android:name=".mine.information.Information_NichengActivity"/>
+        <activity android:name=".mine.information.Information_YouxiangActivity"/>
 
         <activity
             android:name="com.zaaach.citypicker.CityPickerActivity"
