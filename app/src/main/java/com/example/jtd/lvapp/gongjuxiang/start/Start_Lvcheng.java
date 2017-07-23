@@ -101,12 +101,7 @@ public class Start_Lvcheng extends AppCompatActivity implements View.OnClickList
                         datas.add(new City("目的地"+i, city
                                 , time, time));
                         adapter.notifyDataSetChanged();
-//                        if (cbbianji.getText()=="完成"){
-//                            for (int a=0;a<lvcity.getChildCount();a++) {
-//                                rbdelete = (RadioButton) lvcity.getChildAt(a).findViewById(R.id.delete_item);
-//                                rbdelete.setVisibility(View.VISIBLE);
-//                            }
-//                        }
+
                     }
                     break;
                 case 3001:

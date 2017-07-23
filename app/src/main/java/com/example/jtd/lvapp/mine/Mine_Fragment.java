@@ -1,7 +1,9 @@
 package com.example.jtd.lvapp.mine;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,11 +13,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.jtd.lvapp.CircleImageView.CircleImageView;
 import com.example.jtd.lvapp.R;
 import com.example.jtd.lvapp.UseHelpActivity;
 import com.example.jtd.lvapp.mine.information.UserInformationActivity;
 import com.example.jtd.lvapp.mine.shizhi.ShezhiActivity;
+
 
 /**
  * Created by JTD on 2017/7/7.
@@ -27,18 +32,33 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
     private Button btnjizhangben_tongbu, btndaochu, btnzhangdan_tongbu, btnzhushou_tongbu, btnall_tongbu;
     private LinearLayout layoutbaoxiandingdan, layoutusehelp, layoutchange, layoutaddview,addview;
     private View view;
-
+    private SharedPreferences preferences;
+    private String name;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.mine_fragment, container, false);
         findidandlistener();
+        loginstatus();
         return view;
+    }
+
+    private void loginstatus() {
+        preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        name=preferences.getString("name","");
+        if (name.equals("")!=true){
+            replace();
+        }else {
+            layoutchange.setVisibility(View.VISIBLE);
+            layoutaddview.removeView(addview);
+            super.onResume();
+        }
     }
 
     @Override
     public void onClick(View view) {
         Intent intent_todenglu = new Intent(getActivity(), DengluActivity.class);
+        Intent intent_information=new Intent(getActivity(),UserInformationActivity.class);
         switch (view.getId()) {
             case R.id.toyouxiang:
                 Intent intent_toyouxiang = new Intent(getActivity(), YouxiangActivity.class);
@@ -46,39 +66,59 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.toshezhi:
                 Intent intent_toshezhi = new Intent(getActivity(), ShezhiActivity.class);
-                startActivity(intent_toshezhi);
+                startActivityForResult(intent_toshezhi,1002);
                 break;
             case R.id.denglu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")){
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.youji:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.zhangdan:
                 break;
             case R.id.shoucang:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.guanzhu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.jizhangben_tongbu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.daochu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.zhangdan_tongbu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.zhushou_tongbu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.all_tongbu:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.baoxiandingdan:
-                startActivityForResult(intent_todenglu, 1001);
+                if (name.equals("")) {
+                    startActivityForResult(intent_todenglu, 1001);
+                }
                 break;
             case R.id.chuce:
                 Intent intent_chuce = new Intent(getActivity(), ZhuceActivity.class);
@@ -89,8 +129,10 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
                 startActivity(intent_usehelp);
                 break;
             case R.id.information:
-                Intent intent_information=new Intent(getActivity(),UserInformationActivity.class);
-                startActivity(intent_information);
+                startActivityForResult(intent_information,1003);
+                break;
+            case R.id.touxiang:
+                startActivityForResult(intent_information,1003);
                 break;
         }
     }
@@ -100,6 +142,11 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1001 && resultCode == 2001) {
             replace();
+        }
+        if (requestCode==1002 && resultCode==2001){
+            loginstatus();
+        }
+        if (requestCode==1003 && resultCode==2001){
 
         }
     }
@@ -111,6 +158,8 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
         layoutaddview.addView(addview);
         LinearLayout layoutinformation=addview.findViewById(R.id.information);
         layoutinformation.setOnClickListener(this);
+        CircleImageView circle=addview.findViewById(R.id.touxiang);
+        circle.setOnClickListener(this);
     }
     private void findidandlistener(){
         rbtoyouxiang = view.findViewById(R.id.toyouxiang);

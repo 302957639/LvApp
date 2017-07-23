@@ -1,6 +1,9 @@
 package com.example.jtd.lvapp.bmob;
 
+import com.example.jtd.lvapp.mine.ChongzhimimaActivity;
+
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.listener.UpdateListener;
 
 /**
  * Created by JTD on 2017/7/16.
@@ -26,4 +29,6 @@ public class User extends BmobObject{
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

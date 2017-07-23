@@ -1,6 +1,7 @@
 package com.example.jtd.lvapp.mine;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -57,13 +58,14 @@ public class DengluActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
                 break;
             case R.id.wangjimima:
-                startActivity(intent_zhuce);
+                Intent intent_chongzhimima=new Intent(DengluActivity.this,ChongzhimimaActivity.class);
+                startActivity(intent_chongzhimima);
                 break;
             case R.id.zhuce:
                 startActivity(intent_zhuce);
                 break;
             case R.id.denglu:
-                String username=etusername.getText().toString();
+                final String username=etusername.getText().toString();
                 String password=etuserpassword.getText().toString();
                 if (username.equals("")&&password.equals("")){
                     Toast.makeText(DengluActivity.this,"请输入账号密码",Toast.LENGTH_SHORT).show();
@@ -76,6 +78,10 @@ public class DengluActivity extends AppCompatActivity implements View.OnClickLis
                     public void done(List<User> list, BmobException e) {
                      if (e==null){
                          if (list.size()==1){
+                             SharedPreferences preferences = getSharedPreferences("user",MODE_PRIVATE);
+                             SharedPreferences.Editor editor=preferences.edit();
+                             editor.putString("name",username);
+                             editor.commit();
                              Intent intent=new Intent();
                              setResult(2001,intent);
                              finish();
