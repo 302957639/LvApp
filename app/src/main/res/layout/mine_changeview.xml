@@ -14,7 +14,7 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:id="@+id/touxiang"
-        android:src="@mipmap/qq"
+
         android:layout_centerInParent="true"
         app:border_width="5dp"
         app:border_color="#FFF"/>
@@ -31,7 +31,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="无言"
+            android:text=""
+            android:id="@+id/information_nicheng"
             android:layout_gravity="center"
             android:textColor="#000"
             android:textSize="20sp"/>
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="3dp"
+            android:id="@+id/information_sex"
             android:src="@mipmap/user_center_sex_man_icon"/>
         <ImageView
             android:layout_width="wrap_content"

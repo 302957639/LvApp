@@ -52,6 +52,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:background="#fff"
+            android:id="@+id/touxiang_choose"
             android:orientation="horizontal">
 
             <TextView
@@ -73,8 +74,8 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_centerInParent="true"
-                android:src="@mipmap/hangkong"
                 app:border_width="5dp"
+                android:id="@+id/touxiang"
                 app:border_color="#EEEEE0"/>
 
             <ImageView
@@ -111,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="xxx"
+                android:text=""
                 android:textColor="#000"
                 android:textSize="20sp" />
 
@@ -228,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:id="@+id/phonenumber"
-                android:text="xxx"
+                android:text=""
                 android:textColor="#000"
                 android:textSize="20sp" />
 

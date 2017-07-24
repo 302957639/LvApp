@@ -4,12 +4,14 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.nfc.NdefRecord;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -18,8 +20,16 @@ import android.widget.Toast;
 import com.example.jtd.lvapp.CircleImageView.CircleImageView;
 import com.example.jtd.lvapp.R;
 import com.example.jtd.lvapp.UseHelpActivity;
+import com.example.jtd.lvapp.bmob.UserInformation;
 import com.example.jtd.lvapp.mine.information.UserInformationActivity;
 import com.example.jtd.lvapp.mine.shizhi.ShezhiActivity;
+
+import java.util.List;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 
 /**
@@ -28,12 +38,16 @@ import com.example.jtd.lvapp.mine.shizhi.ShezhiActivity;
 
 public class Mine_Fragment extends Fragment implements View.OnClickListener {
     private RadioButton rbtoyouxiang, rbtoshezhi, rbyouji, rbzhangdan, rbshoucang, rbguanzhu;
-    private TextView tvdenglu, tvchuce;
+    private TextView tvdenglu, tvchuce, tvinformation_nicheng;
     private Button btnjizhangben_tongbu, btndaochu, btnzhangdan_tongbu, btnzhushou_tongbu, btnall_tongbu;
     private LinearLayout layoutbaoxiandingdan, layoutusehelp, layoutchange, layoutaddview,addview;
     private View view;
     private SharedPreferences preferences;
     private String name;
+    private CircleImageView circle;
+    private LinearLayout layoutinformation;
+    private ImageView imginformation_sex;
+    private UserInformation information;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -141,25 +155,75 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1001 && resultCode == 2001) {
-            replace();
+            loginstatus();
         }
         if (requestCode==1002 && resultCode==2001){
             loginstatus();
         }
         if (requestCode==1003 && resultCode==2001){
-
+            int imgid = data.getIntExtra("touxiang", 0);
+            String nicheng = data.getStringExtra("nicheng");
+            String sex = data.getStringExtra("sex");
+            circle.setImageResource(imgid);
+            tvinformation_nicheng.setText(nicheng);
+            choosesex(sex);
         }
     }
 
+
+    private void choosesex(String sex) {
+        switch (sex) {
+            case "男":
+                if (imginformation_sex.getVisibility() == View.GONE) {
+                    imginformation_sex.setVisibility(View.VISIBLE);
+                    imginformation_sex.setImageResource(R.mipmap.user_center_sex_man_icon);
+                }
+                imginformation_sex.setImageResource(R.mipmap.user_center_sex_man_icon);
+                break;
+            case "女":
+                if (imginformation_sex.getVisibility() == View.GONE) {
+                    imginformation_sex.setVisibility(View.VISIBLE);
+                    imginformation_sex.setImageResource(R.mipmap.user_center_sex_woman_icon);
+                }
+                imginformation_sex.setImageResource(R.mipmap.user_center_sex_woman_icon);
+                break;
+            case "其他":
+                imginformation_sex.setVisibility(View.GONE);
+                break;
+        }
+    }
     private void replace() {
+        Bmob.initialize(getActivity(), "b6bd29e7a74a0fddeb82660590ad0678");
+
         layoutchange.setVisibility(View.GONE);
         LayoutInflater inflater = getActivity().getLayoutInflater();
         addview = (LinearLayout) inflater.inflate(R.layout.mine_changeview, null);
         layoutaddview.addView(addview);
-        LinearLayout layoutinformation=addview.findViewById(R.id.information);
+        layoutinformation = addview.findViewById(R.id.information);
         layoutinformation.setOnClickListener(this);
-        CircleImageView circle=addview.findViewById(R.id.touxiang);
+        tvinformation_nicheng = addview.findViewById(R.id.information_nicheng);
+        imginformation_sex = addview.findViewById(R.id.information_sex);
+        circle = addview.findViewById(R.id.touxiang);
         circle.setOnClickListener(this);
+
+        BmobQuery<UserInformation> query = new BmobQuery<UserInformation>();
+        query.addWhereEqualTo("name", name);
+        query.findObjects(new FindListener<UserInformation>() {
+            @Override
+            public void done(List<UserInformation> list, BmobException e) {
+                if (e == null) {
+                    if (list.size() == 1) {
+                        information = list.get(0);
+                        circle.setImageResource(information.getImgid());
+                        tvinformation_nicheng.setText(information.getNicheng());
+                        String sex = information.getSex();
+                        choosesex(sex);
+                    } else {
+                        circle.setImageResource(R.mipmap.qq);
+                    }
+                }
+            }
+        });
     }
     private void findidandlistener(){
         rbtoyouxiang = view.findViewById(R.id.toyouxiang);
